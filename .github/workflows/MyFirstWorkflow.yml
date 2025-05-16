@@ -2,19 +2,16 @@
 name: My First Workflow
 on:
   push:
-    branchs:
+    branches:
       - main
-  workworkflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   first_job:
     name: My first job
     runs-on: ubuntu-latest
     steps:
-      - name: Greet the user
-      - run:
-        echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}."
-        echo "My secret is 🤫 ${{ secrets.MY_SECRET }}."
+      - run: echo "My secret is 🤫 ${{ secrets.MY_SECRET }}."
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - run: tree 
