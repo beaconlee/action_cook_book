@@ -1,0 +1,25 @@
+# test main workflows
+name: main
+on: 
+  push:
+    branches: 
+      - main
+    paths: 
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+  main_job:
+    env: ubuntu-latest
+    name: echo name
+    steps:
+      - run: |
+          echo "hello beacon"
+          echo "hello uan"
+          echo "hello xin"
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - run: tree
+
+
+      
