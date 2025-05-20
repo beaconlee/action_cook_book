@@ -10,7 +10,7 @@ on:
 
 jobs:
   main_job:
-    env: ubuntu-latest
+    runs-on: ubuntu-latest
     name: echo name
     steps:
       - run: |
